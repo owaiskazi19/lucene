@@ -70,7 +70,11 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
       - name: Post the status comment
+<<<<<<< HEAD
         if: steps.request.outputs.pr != '' && github.event.action == 'in_progress'
+=======
+        if: steps.request.outputs.pr != '' && github.event.action == 'requested'
+>>>>>>> 3027397549 (ci: add a label-triggered luceneutil benchmark workflow for pull requests)
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ steps.request.outputs.pr }}
